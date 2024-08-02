@@ -14,12 +14,12 @@ Overall, the database serves as a critical tool for Sparkify to leverage its dat
 
 ### Some Examples:
 #### Question: What are the top 5 most played songs in the database?
-!(images/sc1.png)
-!(images/sc2.png)
+![Screenshot 1](images/sc1.png)
+![Screenshot 2](images/sc2.png)
 
 #### Question: How does user engagement (in terms of song plays) differ between male and female users?
-!(images/sc3.png)
-!(images/sc4.png)
+![Screenshot 3](images/sc3.png)
+![Screenshot 4](images/sc4.png)
 
 ### Database Schema Design and ETL Pipeline
 Schema Design

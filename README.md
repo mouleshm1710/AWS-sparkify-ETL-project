@@ -13,13 +13,15 @@ What features or changes can be implemented to improve user retention?
 Overall, the database serves as a critical tool for Sparkify to leverage its data for growth and optimization in a competitive market.
 
 ### Some Examples:
+
 #### Question: What are the top 5 most played songs in the database?
-![Screenshot 1](images/sc1.png)
-![Screenshot 2](images/sc2.png)
+<img src="images/sc1.png" alt="Top 5 Most Played Songs" width="600"/>
+<img src="images/sc2.png" alt="Query Result for Most Played Songs" width="600"/>
 
 #### Question: How does user engagement (in terms of song plays) differ between male and female users?
-![Screenshot 3](images/sc3.png)
-![Screenshot 4](images/sc4.png)
+<img src="images/sc3.png" alt="User Engagement by Gender" width="600"/>
+<img src="images/sc4.png" alt="Query Result for User Engagement" width="600"/>
+
 
 ### Database Schema Design and ETL Pipeline
 Schema Design

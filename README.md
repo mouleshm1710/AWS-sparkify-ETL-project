@@ -15,16 +15,20 @@ Overall, the database serves as a critical tool for Sparkify to leverage its dat
 ### Some Examples:
 
 #### Question: What are the top 5 most played songs in the database?
+
 <img src="images/sc1.png" alt="Top 5 Most Played Songs" width="600"/>
+
 <img src="images/sc2.png" alt="Query Result for Most Played Songs" width="600"/>
 
 #### Question: How does user engagement (in terms of song plays) differ between male and female users?
+
 <img src="images/sc3.png" alt="User Engagement by Gender" width="600"/>
+
 <img src="images/sc4.png" alt="Query Result for User Engagement" width="600"/>
 
 
 ### Database Schema Design and ETL Pipeline
-Schema Design
+#### Schema Design
 The database schema is designed as a star schema, consisting of one fact table and four dimension tables, optimized for efficient querying and analysis of song play events. The schema includes:
 
 Fact Table: songplays
@@ -35,12 +39,16 @@ Dimension Tables:
 
 users: Contains user demographics and subscription level to understand user behavior and segmentation.
 Columns: user_id, first_name, last_name, gender, level
+
 songs: Stores information about songs available in the music database for song popularity analysis.
 Columns: song_id, title, artist_id, year, duration
+
 artists: Provides details about artists to analyze trends in artist popularity and engagement.
 Columns: artist_id, name, location, latitude, longitude
+
 time: Breaks down timestamps to facilitate time-based analysis of song play activities.
 Columns: start_time, hour, day, week, month, year, weekday
+
 This design allows for efficient joins between the fact and dimension tables, enabling complex queries to be executed swiftly, which is crucial for analytical performance.
 
 ### ETL Pipeline

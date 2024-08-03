@@ -1,0 +1,23 @@
+[AWS]
+key = YOUR_AWS_ACCESS_KEY           # Replace with your AWS Access Key
+secret = YOUR_AWS_SECRET_KEY         # Replace with your AWS Secret Key
+session_token = YOUR_AWS_SESSION_TOKEN  # Replace with your AWS Session Token
+
+[DWH]
+dwh_cluster_type = single-node       # Cluster type
+dwh_num_nodes = 1                     # Number of nodes
+dwh_node_type = dc2.large             # Node type
+dwh_iam_role_name = YOUR_IAM_ROLE_NAME  # Replace with your IAM role name
+dwh_cluster_identifier = YOUR_CLUSTER_IDENTIFIER  # Replace with your cluster identifier
+dwh_db = YOUR_DATABASE_NAME           # Replace with your database name
+dwh_db_user = YOUR_DB_USER            # Replace with your database user
+dwh_db_password = YOUR_DB_PASSWORD     # Replace with your database password
+dwh_port = 5439                       # Default port for Redshift
+dwh_endpoint = YOUR_CLUSTER_ENDPOINT   # Replace with your cluster endpoint
+dwh_role_arn = YOUR_ROLE_ARN           # Replace with your role ARN
+dwh_vpc_id = YOUR_VPC_ID               # Replace with your VPC ID
+
+[S3]
+log_data = 's3://YOUR_BUCKET/log_data'   # Replace with your log data S3 path
+log_jsonpath = 's3://YOUR_BUCKET/log_json_path.json'  # Replace with your log JSON path
+song_data = 's3://YOUR_BUCKET/song_data'   # Replace with your song data S3 path

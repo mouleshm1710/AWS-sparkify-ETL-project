@@ -31,22 +31,21 @@ Overall, the database serves as a critical tool for Sparkify to leverage its dat
 #### Schema Design
 The database schema is designed as a star schema, consisting of one fact table and four dimension tables, optimized for efficient querying and analysis of song play events. The schema includes:
 
-Fact Table: songplays
-
+#### Fact Table: songplays
 Columns: songplay_id, start_time, user_id, level, song_id, artist_id, session_id, location, user_agent
 This table records the events associated with song plays, enabling the analysis of user interactions with the platform.
-Dimension Tables:
 
-users: Contains user demographics and subscription level to understand user behavior and segmentation.
+#### Dimension Tables:
+**users**: Contains user demographics and subscription level to understand user behavior and segmentation.
 Columns: user_id, first_name, last_name, gender, level
 
-songs: Stores information about songs available in the music database for song popularity analysis.
+**songs**: Stores information about songs available in the music database for song popularity analysis.
 Columns: song_id, title, artist_id, year, duration
 
-artists: Provides details about artists to analyze trends in artist popularity and engagement.
+**artists**: Provides details about artists to analyze trends in artist popularity and engagement.
 Columns: artist_id, name, location, latitude, longitude
 
-time: Breaks down timestamps to facilitate time-based analysis of song play activities.
+**time**: Breaks down timestamps to facilitate time-based analysis of song play activities.
 Columns: start_time, hour, day, week, month, year, weekday
 
 This design allows for efficient joins between the fact and dimension tables, enabling complex queries to be executed swiftly, which is crucial for analytical performance.
@@ -54,11 +53,11 @@ This design allows for efficient joins between the fact and dimension tables, en
 ### ETL Pipeline
 The ETL (Extract, Transform, Load) pipeline is designed to automate the process of loading data from S3 into the Redshift database, ensuring that the data is consistently updated and structured for analysis. The key components of the ETL process are:
 
-Extract: Data is extracted from S3, where raw event and song datasets are stored in JSON format.
+**Extract**: Data is extracted from S3, where raw event and song datasets are stored in JSON format.
 
-Transform: Data is transformed to fit the schema of the staging tables in Redshift, ensuring compatibility with the dimension and fact tables. This includes data cleansing, deduplication, and type conversions as necessary.
+**Transform**: Data is transformed to fit the schema of the staging tables in Redshift, ensuring compatibility with the dimension and fact tables. This includes data cleansing, deduplication, and type conversions as necessary.
 
-Load:
+**Load**:
 Load the transformed data into staging tables, followed by the population of the fact and dimension tables.
 
 Note: The songplays table is populated using a combination of data from the event and song datasets, ensuring a comprehensive view of user interactions.

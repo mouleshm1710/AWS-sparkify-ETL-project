@@ -12,8 +12,17 @@ create_table_queries = sql_queries.create_table_queries
 drop_table_queries = sql_queries.drop_table_queries
 
 
-# Define drop table function
 def drop_tables(cur, conn):
+    """Drop tables in the Redshift database.
+
+    This function executes drop statements for each table defined in
+    the drop_table_queries list. It prints a message for each table
+    dropped successfully or an error if the table is not present.
+
+    Args:
+        cur: The database cursor to execute queries.
+        conn: The database connection to commit changes.
+    """
     for query in drop_table_queries:
         try:
             print(query)
@@ -28,8 +37,17 @@ def drop_tables(cur, conn):
             print()
 
 
-# Define create table function
 def create_tables(cur, conn):
+    """Create tables in the Redshift database.
+
+    This function executes create statements for each table defined in
+    the create_table_queries list. It prints a message for each table
+    created successfully or an error if there is an issue.
+
+    Args:
+        cur: The database cursor to execute queries.
+        conn: The database connection to commit changes.
+    """
     for query in create_table_queries:
         try:
             print(query)
@@ -44,8 +62,12 @@ def create_tables(cur, conn):
             print()
 
 
-# Defining main function
 def main():
+    """Main function to execute the ETL process for table management.
+
+    This function imports data warehouse credentials, connects to the
+    Redshift cluster, and executes the table drop and create processes.
+    """
     # Import required data warehouse credentials using configparser
     config = configparser.ConfigParser()
     config.read('dwh.cfg')

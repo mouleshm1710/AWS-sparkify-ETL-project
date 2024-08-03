@@ -12,8 +12,17 @@ copy_table_queries = sql_queries.copy_table_queries
 insert_table_queries = sql_queries.insert_table_queries
 
 
-# Define load table function for staging
 def load_staging_tables(cur, conn):
+    """Load data into staging tables from S3.
+
+    This function truncates each staging table and copies data from S3
+    into the corresponding Redshift table. It prints the row counts
+    before and after the copy operation.
+
+    Args:
+        cur: The database cursor to execute queries.
+        conn: The database connection to commit changes.
+    """
     for query in copy_table_queries:
         try:
             # Let's truncate and load staging table
@@ -40,8 +49,17 @@ def load_staging_tables(cur, conn):
             print()
 
 
-# Define insert table function
 def insert_tables(cur, conn):
+    """Insert data from staging tables into analytical tables.
+
+    This function truncates each analytical table and inserts data from
+    the corresponding staging table. It prints the row counts before
+    and after the insert operation.
+
+    Args:
+        cur: The database cursor to execute queries.
+        conn: The database connection to commit changes.
+    """
     for query in insert_table_queries:
         try:
             # Let's truncate and insert data into analytical tables
@@ -68,8 +86,13 @@ def insert_tables(cur, conn):
             print()
 
 
-# Defining main function
 def main():
+    """Main function to execute the ETL process.
+
+    This function imports data warehouse credentials, connects to the
+    Redshift cluster, and executes the ETL process by loading
+    staging tables and inserting data into analytical tables.
+    """
     # Import required data warehouse credentials using configparser
     config = configparser.ConfigParser()
     config.read('dwh.cfg')

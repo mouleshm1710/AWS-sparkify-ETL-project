@@ -55,18 +55,22 @@ This design allows for efficient joins between the fact and dimension tables, en
 The ETL (Extract, Transform, Load) pipeline is designed to automate the process of loading data from S3 into the Redshift database, ensuring that the data is consistently updated and structured for analysis. The key components of the ETL process are:
 
 Extract: Data is extracted from S3, where raw event and song datasets are stored in JSON format.
+
 Transform: Data is transformed to fit the schema of the staging tables in Redshift, ensuring compatibility with the dimension and fact tables. This includes data cleansing, deduplication, and type conversions as necessary.
+
 Load:
 Load the transformed data into staging tables, followed by the population of the fact and dimension tables.
-The songplays table is populated using a combination of data from the event and song datasets, ensuring a comprehensive view of user interactions.
+
+Note: The songplays table is populated using a combination of data from the event and song datasets, ensuring a comprehensive view of user interactions.
 Other dimension tables are populated with relevant data, ensuring referential integrity between the tables.
+
 The ETL process is implemented in the etl.py file, and the overall architecture allows for easy updates and maintenance of the data, aligning with Sparkify's need for a dynamic and scalable analytical solution.
 
 ### File Structure
 The project includes the following files:
 
-execution_notebook.ipynb: Jupyter notebook for executing and testing queries/scripts.
-create_cluster_resources.py: Script for creating the necessary AWS resources.
+#### **`execution_notebook.ipynb`**: Jupyter notebook for executing and testing queries/scripts.
+#### create_cluster_resources.py: Script for creating the necessary AWS resources.
 create_tables.py: Script for creating the database schema in Redshift.
 delete_cluster_resources.py: Script for cleaning up AWS resources.
 dwh.cfg: Configuration file containing connection details for the Redshift database.

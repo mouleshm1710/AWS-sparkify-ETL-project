@@ -71,12 +71,18 @@ The project includes the following files:
 
 #### `execution_notebook.ipynb`: 
 Jupyter notebook for executing and testing queries/scripts.
-#### create_cluster_resources.py: Script for creating the necessary AWS resources.
-create_tables.py: Script for creating the database schema in Redshift.
-delete_cluster_resources.py: Script for cleaning up AWS resources.
-dwh.cfg: Configuration file containing connection details for the Redshift database.
-etl.py: Script for loading and transforming data into Redshift.
-README.md: This README file providing project details and documentation.
+#### `create_cluster_resources.py`: 
+Script for creating the necessary AWS resources.
+#### `create_tables.py`: 
+Script for creating the database schema in Redshift.
+#### `delete_cluster_resources.py`: 
+Script for cleaning up AWS resources.
+#### `dwh.cfg`: 
+Configuration file containing connection details for the Redshift database.
+#### `etl.py`: 
+Script for loading and transforming data into Redshift.
+#### `README.md`: 
+This README file providing project details and documentation.
 sql_queries.py: Contains SQL statements used in the ETL process and table creation.
 
 ### Conclusion
